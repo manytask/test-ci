@@ -34,7 +34,7 @@ jobs:
 
   validate_pr:
     needs: [autolabel_pr]
-    uses: manytask/.github/.github/workflows/reusable-validate-pr.yml
+    uses: manytask/.github/.github/workflows/reusable-validate-pr.yml@main
     permissions:
       pull-requests: read
       contents: read

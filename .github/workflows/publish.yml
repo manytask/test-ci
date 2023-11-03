@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   update_changelog_version:
-    uses: manytask/.github/.github/workflows/reusable-update-changelog-version.yml
+    uses: manytask/.github/.github/workflows/reusable-update-changelog-version.yml@main
     permissions:
       contents: write
     with:

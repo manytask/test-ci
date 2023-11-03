@@ -11,11 +11,6 @@ on:
       - reopened
 
 
-permissions:
-  pull-requests: write
-  contents: write
-
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
@@ -34,6 +29,7 @@ jobs:
 
   validate_pr:
     needs: [autolabel_pr]
+    if: ${{ always() && !failure() && !cancelled() }}  # no needs jobs are failed or cancelled
     uses: manytask/.github/.github/workflows/reusable-validate-pr.yml@main
     permissions:
       pull-requests: read

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1](https://github.com/manytask/test-ci/releases/tag/0.2.1) - 2023-11-03
+
+Re-run
+
+**Full Changelog**: [0.2.0...0.2.1](https://github.com/manytask/test-ci/compare/0.2.0...0.2.1)
+
 ## [0.1.1](https://github.com/manytask/test-ci/releases/tag/0.1.1) - 2023-11-03
 
 Try to fix release_url and changelog generation

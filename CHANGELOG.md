@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1](https://github.com/manytask/test-ci/releases/tag/0.1.1) - 2023-11-03
+
+Try to fix release_url and changelog generation
+
+**Full Changelog**: https://github.com/manytask/test-ci/compare/0.1.0...0.1.1
+
 ## 0.1.0 - 2023-11-03
 
 ### Features

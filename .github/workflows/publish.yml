@@ -24,6 +24,7 @@ jobs:
       release_tag: ${{ github.event.release.tag_name }}
       release_target: ${{ github.event.release.target_commitish }}
       release_body: ${{ github.event.release.body }}
+      release_url: ${{ github.event.release.html_url }}
 
   release_some_package:
     runs-on: ubuntu-latest

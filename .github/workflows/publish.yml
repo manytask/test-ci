@@ -1,0 +1,43 @@
+name: Publish
+
+on:
+  release:
+    types:
+      - released
+
+
+permissions:
+  contents: write
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.release.id }}
+  cancel-in-progress: false
+
+
+jobs:
+  update_changelog_version:
+    uses: manytask/.github/.github/workflows/reusable-update-changelog-version.yml
+    permissions:
+      contents: write
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+      release_target: ${{ github.event.release.target_commitish }}
+      release_body: ${{ github.event.release.body }}
+
+  release_some_package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+
+      - name: Check version
+        run: |
+          echo "Check version"
+          cat VERSION
+
+      - name: Check changelog
+        run: |
+          echo "Check changelog"
+          cat CHANGELOG.md

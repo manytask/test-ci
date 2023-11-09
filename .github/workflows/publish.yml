@@ -25,6 +25,7 @@ jobs:
       release_target: ${{ github.event.release.target_commitish }}
       release_body: ${{ github.event.release.body }}
       release_url: ${{ github.event.release.html_url }}
+      token: ${{ secrets.MANYTASK_SERVICE_PUSH_TOKEN }}
 
   release_some_package:
     runs-on: ubuntu-latest
